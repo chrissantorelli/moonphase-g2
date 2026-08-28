@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moon Phase</title>
+    <style>
+      :root {
+        --hud: #7dd97d; /* the G2's green micro-LED, softened */
+        --hud-dim: #3a5c3a;
+      }
+      * { box-sizing: border-box; margin: 0; }
+      body {
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        background: #050705;
+        color: var(--hud);
+        font: 16px/1.5 ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+        text-align: center;
+        padding: 24px;
+      }
+      main { display: grid; gap: 20px; justify-items: center; }
+      h1 {
+        font-size: 13px;
+        font-weight: 400;
+        letter-spacing: 0.35em;
+        text-transform: uppercase;
+        color: var(--hud-dim);
+      }
+      #moon-canvas {
+        width: 200px;
+        height: 200px;
+        /* tint the greyscale render toward the HUD green */
+        filter: sepia(1) hue-rotate(65deg) saturate(2.4);
+      }
+      #moon-label { max-width: 30ch; }
+      p.hint { font-size: 12px; color: var(--hud-dim); }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Moon Phase</h1>
+      <canvas id="moon-canvas" width="200" height="200"></canvas>
+      <div id="moon-label">Waiting for the bridge…</div>
+      <p class="hint">On the glasses: tap to refresh, double-tap to exit.</p>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

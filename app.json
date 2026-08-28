@@ -1,0 +1,15 @@
+{
+  "package_id": "com.santorellic.moonphase",
+  "edition": "202601",
+  "name": "Moon Phase",
+  "version": "0.1.0",
+  "min_sdk_version": "0.0.14",
+  "entrypoint": "index.html",
+  "permissions": [
+    {
+      "name": "location",
+      "desc": "Used only to orient the moon correctly for your hemisphere (the crescent appears mirrored south of the equator)."
+    }
+  ],
+  "supported_languages": ["en"]
+}
